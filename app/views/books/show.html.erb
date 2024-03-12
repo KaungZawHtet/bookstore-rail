@@ -14,30 +14,7 @@
 </ul>
 
 <h2>Buying Customer</h2>
-<% @book.customers.each do |customer| %>
-  <p>
-    <strong>Customer:</strong>
-    <%= customer.name %>
-  </p>
-
-  <p>
-    <strong>age:</strong>
-    <%= customer.age %>
-  </p>
-<% end %>
-
+<%= render @book.customers %>
 
 <h2>Buy the book:</h2>
-<%= form_with model: [ @book, @book.customers.build ] do |form| %>
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.label :age %><br>
-    <%= form.text_area :age %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render 'customers/form' %>
