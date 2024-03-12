@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "books#index"
-  resources :books
+  resources :books do
+    resources :customers
+  end
   # The resources method also sets up URL and path helper methods that we can use to keep our code from depending on a specific route configuration
 
 
