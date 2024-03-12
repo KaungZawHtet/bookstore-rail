@@ -12,3 +12,10 @@
   <strong>Wish:</strong>
   <%= customer.wish %>
 </p>
+
+  <p>
+    <%= link_to "Destroy Customer", [customer.book, customer], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
+  </p>
