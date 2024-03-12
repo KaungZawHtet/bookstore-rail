@@ -4,3 +4,7 @@
 <h4>  <%= @book.description %>  </h4>
 
 <h5>  <%= @book.pages %> </h5>
+
+<ul>
+  <li><%= link_to "Edit", edit_book_path(@book) %></li>
+</ul>
