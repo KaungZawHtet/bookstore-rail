@@ -4,8 +4,11 @@ class BooksController < ApplicationController
 
 
   def index
-
-    @books = Book.all
+    if params[:query].present?
+      @books = Book.where('title LIKE ?', "%#{params[:query]}%")
+    else
+      @books = Book.all
+    end
   end
 
   def show
