@@ -1,5 +1,7 @@
 class CustomersController < ApplicationController
 
+  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index]
+
   def create
     @book = Book.find(params[:book_id])
     @customer = @book.customers.create(customer_params)
