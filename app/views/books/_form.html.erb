@@ -25,7 +25,7 @@
 
     <div>
     <%= form.label :wish %><br>
-    <%= form.text_area :wish %>
+    <%= form.select :wish, Visible::VALID_WISHES, selected: 'eager' %>
     <% @book.errors.full_messages_for(:wish).each do |message| %>
     <div><%= message %></div>
     <% end %>
