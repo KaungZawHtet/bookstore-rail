@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root "articles#index"
-  get 'books', to: 'books#index'
-  get "/books/:id", to: "books#show"
+  root "books#index"
+  resources :books
+  # The resources method also sets up URL and path helper methods that we can use to keep our code from depending on a specific route configuration
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
