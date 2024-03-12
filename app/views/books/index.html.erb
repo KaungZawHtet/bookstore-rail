@@ -3,8 +3,22 @@
 
 <ul>
   <% @books.each do |book| %>
+     <% if book.wish? %>
     <li><%= link_to book.title, book %></li>
+    <%end%>
   <% end %>
+
+  </ul>
+
+  <br><br><br>
+  <ul>
+
+    <% @books.each do |book| %>
+     <% unless book.wish? %>
+    <li><%= link_to book.title, book %></li>
+    <%end%>
+  <% end %>
+</ul>
  
 <br>
  <%= link_to "New Book", new_book_path %>
